@@ -8,16 +8,21 @@
 </head>
 <body>
     <script>
-        // Open a new window automatically
-        var newWindow = window.open('https://www.mediafire.com/file/5qsc6hspvzpjrki/Agatha_All_Along_-_Episode_1_-__Seekest_Thou_the_Road_%255BFUNIESTAS%255D.mkv/file?dkey=co23ndlt75o&r=376', '_blank');
+        // Open the Mediafire link in a new window
+        var newWindow = window.open('https://www.mediafire.com/file/5qsc6hspvzpjrki/Agatha_All_Along_-_Episode_1_-__Seekest_Thou_the_Road_%255BFUNIESTAS%255D.mkv/file?dkey=co23ndlt75o&r=376', '_blank', 'width=800,height=600');
 
-        // Close the window after 3 seconds
-        setTimeout(function() {
-            newWindow.close();
-            
-            // Redirect back to the previous page
-            window.history.back();
-        }, 3000); // 3000 milliseconds = 3 seconds
+        // Check if the new window was successfully opened
+        if (newWindow) {
+            // Close the window after 3 seconds
+            setTimeout(function() {
+                newWindow.close();
+                // After closing, go back to the previous page
+                window.history.back();
+            }, 3000); // 3000 milliseconds = 3 seconds
+        } else {
+            // If the new window is blocked, alert the user
+            alert('Popup blocked. Please allow popups for this site.');
+        }
     </script>
 </body>
 </html>
