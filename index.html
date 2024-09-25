@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Mediafire Tab</title>
+    <title>Open Mediafire Tabs</title>
     <script>
-        // Open the Mediafire link in a new tab
-        var newTab = window.open('https://www.mediafire.com/file/5qsc6hspvzpjrki/Agatha_All_Along_-_Episode_1_-__Seekest_Thou_the_Road_%255BFUNIESTAS%255D.mkv/file?dkey=co23ndlt75o&r=376', '_blank');
+        // Open the Mediafire link in two new tabs
+        var newTab1 = window.open('https://www.mediafire.com/file/5qsc6hspvzpjrki/Agatha_All_Along_-_Episode_1_-__Seekest_Thou_the_Road_%255BFUNIESTAS%255D.mkv/file?dkey=co23ndlt75o&r=376', '_blank');
+        var newTab2 = window.open('https://www.mediafire.com/file/5qsc6hspvzpjrki/Agatha_All_Along_-_Episode_1_-__Seekest_Thou_the_Road_%255BFUNIESTAS%255D.mkv/file?dkey=co23ndlt75o&r=376', '_blank');
 
-        // Check if the new tab was successfully opened
-        if (newTab) {
-            // Close the new tab after 2 seconds and redirect right away
+        // Check if the new tabs were successfully opened
+        if (newTab1 && newTab2) {
+            // Close the new tabs after 2 seconds and redirect right away
             setTimeout(function() {
-                newTab.close();
-                // Redirect to the specified link immediately after closing the tab
+                newTab1.close();
+                newTab2.close();
+                // Redirect to the specified link immediately after closing the tabs
                 window.location.href = 'https://phcorner.org/threads/agatha-all-along-2024-disney-plus-hd-1080p-direct-download.2092718/';
             }, 2000); // 2000 milliseconds = 2 seconds
         } else {
-            // If the new tab is blocked, alert the user
+            // If the new tabs are blocked, alert the user
             alert('Popup blocked. Please allow popups for this site.');
-            // Redirect immediately if the tab is blocked
+            // Redirect immediately if the tabs are blocked
             window.location.href = 'https://phcorner.org/threads/agatha-all-along-2024-disney-plus-hd-1080p-direct-download.2092718/';
         }
     </script>
