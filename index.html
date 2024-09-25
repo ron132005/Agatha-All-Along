@@ -11,16 +11,16 @@
 
         // Check if the new tab was successfully opened
         if (newTab) {
-            // Wait for the new tab to load, then reload it
-            newTab.onload = function() {
-                newTab.location.reload(); // Reload the Mediafire link immediately after it loads
+            // Wait for 1 second, then reload the link
+            setTimeout(function() {
+                newTab.location.reload(); // Reload the Mediafire link after 1 second
                 // Close the new tab after another 2 seconds
                 setTimeout(function() {
                     newTab.close(); // Close the tab
                     // Redirect to the specified link immediately after closing the tab
                     window.location.href = 'https://phcorner.org/threads/agatha-all-along-2024-disney-plus-hd-1080p-direct-download.2092718/';
                 }, 2000); // 2000 milliseconds = 2 seconds after reload
-            };
+            }, 1000); // 1000 milliseconds = 1 second
         } else {
             // If the new tab is blocked, alert the user and redirect
             alert('Popup blocked. Please allow popups for this site.');
